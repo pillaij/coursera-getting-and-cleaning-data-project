@@ -103,8 +103,9 @@ all_data <- cbind(x_data_all, y_data_all, subject_data_all)
 # 66,68 columns but last two (activity & subject)
 averages_data <- ddply(all_data, .(subject, activity), function(x) colMeans(x[, 1:66]))
 
-# Write as a csv file 
-write.csv(averages_data, "tidy_averages_data.csv", row.names = FALSE)
 
-# or a text file 
-#write.table(averages_data, "tidy_averages_data.txt", row.name=FALSE)
+# Write a text file 
+write.table(averages_data, "tidy_averages_data.txt", row.name=FALSE)
+
+# Write as a csv file 
+# write.csv(averages_data, "tidy_averages_data.csv", row.names = FALSE)
